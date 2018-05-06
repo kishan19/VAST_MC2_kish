@@ -1,0 +1,1718 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20181.18.0416.1335                               -->
+<workbook original-version='18.1' source-build='2018.1.0 (20181.18.0416.1335)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='water_readings_cleaned' inline='true' name='federated.1ncmjri1lw54to14edimp1hlu1ub' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='water_readings_cleaned' name='textscan.0jwe79u08k529w175esz70twzkn5'>
+            <connection class='textscan' directory='C:/Users/k.shridhar/Desktop/VAST 2018/MC2' filename='water_readings_cleaned.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0jwe79u08k529w175esz70twzkn5' name='water_readings_cleaned.csv' table='[water_readings_cleaned#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='date' name='sample date' ordinal='0' />
+            <column datatype='string' name='location' ordinal='1' />
+            <column datatype='integer' name='id' ordinal='2' />
+            <column datatype='real' name='value' ordinal='3' />
+            <column datatype='string' name='measure' ordinal='4' />
+            <column datatype='string' name='unit' ordinal='5' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[water_readings_cleaned.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sample date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[sample date]</local-name>
+            <parent-name>[water_readings_cleaned.csv]</parent-name>
+            <remote-alias>sample date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>location</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[location]</local-name>
+            <parent-name>[water_readings_cleaned.csv]</parent-name>
+            <remote-alias>location</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[water_readings_cleaned.csv]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>value</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[value]</local-name>
+            <parent-name>[water_readings_cleaned.csv]</parent-name>
+            <remote-alias>value</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>measure</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[measure]</local-name>
+            <parent-name>[water_readings_cleaned.csv]</parent-name>
+            <remote-alias>measure</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>unit</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[unit]</local-name>
+            <parent-name>[water_readings_cleaned.csv]</parent-name>
+            <remote-alias>unit</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Id' datatype='integer' name='[id]' role='dimension' type='ordinal' />
+      <column caption='Location' datatype='string' name='[location]' role='dimension' type='nominal' />
+      <column caption='Measure' datatype='string' name='[measure]' role='dimension' type='nominal' />
+      <column caption='Sample Date' datatype='date' name='[sample date]' role='dimension' type='ordinal' />
+      <column caption='Unit' datatype='string' name='[unit]' role='dimension' type='nominal' />
+      <column caption='Value' datatype='real' name='[value]' role='measure' type='quantitative' />
+      <column-instance column='[measure]' derivation='Attribute' name='[attr:measure:nk]' pivot='key' type='nominal' />
+      <column-instance column='[measure]' derivation='Count' name='[cnt:measure:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[measure]' derivation='None' name='[none:measure:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.545813' measure-ordering='alphabetic' measure-percentage='0.454187' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:measure:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Acenaphthylene&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Cesium&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Heptachlor&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Manganese&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Oxygen saturation&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Arsenic&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Bicarbonates&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Boron&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Hexachlorobenzene&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Tetrachloromethane&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Water temperature&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;beta-Hexaxchlorocyclohexane&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Cyanides&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Orthophosphate-phosphorus&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;PCB 52&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Pentachlorobenzene&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Total nitrogen&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Benzo(k)fluoranthene&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Calcium&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Endosulfan (beta)&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Inorganic nitrogen&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Mercury&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Chlorides&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Chrysene&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Endosulfan (alpha)&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Organic nitrogen&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Sodium&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;1,2,3-Trichlorobenzene&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Nickel&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;p,p-DDD&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;PAHs&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Total extractable matter&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Total phosphorus&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Anthracene&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Chlorodinine&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Fluorene&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Macrozoobenthos&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Zinc&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Endrin&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Naphthalene&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Nitrites&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;PCB 118&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Simazine&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Total dissolved salts&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Dissolved organic carbon&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Fecal coliforms&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Heptachloroepoxide&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Lead&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;PCB 153&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;1,2,4-Trichlorobenzene&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;alpha-Hexachlorocyclohexane&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Aluminium&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Anionic active surfactants&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Dissolved oxygen&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Carbonates&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Chemical Oxygen Demand (Cr)&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Fluoranthene&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Metolachlor&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Total hardness&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Benzo(g,h,i)perylene&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;PCB 101&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Silica (SiO2)&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Sulphates&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Total dissolved phosphorus&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;AGOC-3A&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Copper&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Fecal streptococci&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Methoxychlor&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;PCB 180&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Benzo(a)anthracene&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Berilium&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Cadmium&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Methylosmoline&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Petroleum hydrocarbons&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Benzo(a)pyrene&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Chemical Oxygen Demand (Mn)&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Dissolved silicates&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Potassium&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Pyrene&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Acenaphthene&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Barium&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Biochemical Oxygen&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Dieldrin&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;p,p-DDT&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Aldrin&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Ammonium&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Iron&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Phenanthrene&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Total organic carbon&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Trifluralin&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;AOX&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Chromium&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Indeno(1,2,3-c,d)pyrene&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;PCB 138&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Total coliforms&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Alachlor&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Atrazine&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Benzo(b)fluoranthene&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Magnesium&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Selenium&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;gamma-Hexachlorocyclohexane&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Isodrin&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Nitrates&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;p,p-DDE&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;PCB 28&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Sulfides&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[attr:measure:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Acenaphthylene&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Cesium&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Heptachlor&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Manganese&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Oxygen saturation&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Arsenic&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Bicarbonates&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Boron&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Hexachlorobenzene&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Tetrachloromethane&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Water temperature&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;beta-Hexaxchlorocyclohexane&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Cyanides&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Orthophosphate-phosphorus&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;PCB 52&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Pentachlorobenzene&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Total nitrogen&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Benzo(k)fluoranthene&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Calcium&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Endosulfan (beta)&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Inorganic nitrogen&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Mercury&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Chlorides&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Chrysene&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Endosulfan (alpha)&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Organic nitrogen&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Sodium&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;1,2,3-Trichlorobenzene&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Nickel&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;p,p-DDD&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;PAHs&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Total extractable matter&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Total phosphorus&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Anthracene&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Chlorodinine&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Fluorene&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Macrozoobenthos&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Zinc&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Endrin&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Naphthalene&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Nitrites&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;PCB 118&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Simazine&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Total dissolved salts&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Dissolved organic carbon&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Fecal coliforms&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Heptachloroepoxide&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Lead&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;PCB 153&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;1,2,4-Trichlorobenzene&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;alpha-Hexachlorocyclohexane&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Aluminium&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Anionic active surfactants&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Dissolved oxygen&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Carbonates&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Chemical Oxygen Demand (Cr)&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Fluoranthene&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Metolachlor&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Total hardness&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Benzo(g,h,i)perylene&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;PCB 101&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Silica (SiO2)&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Sulphates&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Total dissolved phosphorus&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;AGOC-3A&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Copper&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Fecal streptococci&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Methoxychlor&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;PCB 180&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Benzo(a)anthracene&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Berilium&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Cadmium&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Methylosmoline&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Petroleum hydrocarbons&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Benzo(a)pyrene&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Chemical Oxygen Demand (Mn)&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Dissolved silicates&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Potassium&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Pyrene&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Acenaphthene&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Barium&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Biochemical Oxygen&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Dieldrin&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;p,p-DDT&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Aldrin&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Ammonium&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Iron&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Phenanthrene&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Total organic carbon&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Trifluralin&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;AOX&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Chromium&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Indeno(1,2,3-c,d)pyrene&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;PCB 138&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Total coliforms&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Alachlor&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Atrazine&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Benzo(b)fluoranthene&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Magnesium&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Selenium&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;gamma-Hexachlorocyclohexane&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Isodrin&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Nitrates&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;p,p-DDE&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;PCB 28&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Sulfides&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[cnt:measure:qk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Acenaphthylene&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Cesium&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Heptachlor&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Manganese&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Oxygen saturation&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Arsenic&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Bicarbonates&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Boron&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Hexachlorobenzene&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Tetrachloromethane&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Water temperature&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;beta-Hexaxchlorocyclohexane&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Cyanides&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Orthophosphate-phosphorus&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;PCB 52&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Pentachlorobenzene&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Total nitrogen&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Benzo(k)fluoranthene&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Calcium&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Endosulfan (beta)&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Inorganic nitrogen&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Mercury&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Chlorides&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Chrysene&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Endosulfan (alpha)&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Organic nitrogen&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Sodium&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;1,2,3-Trichlorobenzene&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Nickel&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;p,p-DDD&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;PAHs&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Total extractable matter&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Total phosphorus&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Anthracene&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Chlorodinine&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Fluorene&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Macrozoobenthos&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Zinc&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Endrin&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Naphthalene&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Nitrites&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;PCB 118&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Simazine&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Total dissolved salts&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Dissolved organic carbon&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Fecal coliforms&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Heptachloroepoxide&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Lead&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;PCB 153&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;1,2,4-Trichlorobenzene&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;alpha-Hexachlorocyclohexane&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Aluminium&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Anionic active surfactants&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Dissolved oxygen&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Carbonates&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Chemical Oxygen Demand (Cr)&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Fluoranthene&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Metolachlor&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Total hardness&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Benzo(g,h,i)perylene&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;PCB 101&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Silica (SiO2)&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Sulphates&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Total dissolved phosphorus&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;AGOC-3A&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Copper&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Fecal streptococci&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Methoxychlor&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;PCB 180&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Benzo(a)anthracene&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Berilium&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Cadmium&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Methylosmoline&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Petroleum hydrocarbons&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Benzo(a)pyrene&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Chemical Oxygen Demand (Mn)&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Dissolved silicates&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Potassium&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Pyrene&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Acenaphthene&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Barium&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Biochemical Oxygen&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Dieldrin&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;p,p-DDT&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Aldrin&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Ammonium&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Iron&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Phenanthrene&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Total organic carbon&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Trifluralin&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;AOX&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Chromium&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Indeno(1,2,3-c,d)pyrene&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;PCB 138&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Total coliforms&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Alachlor&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Atrazine&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Benzo(b)fluoranthene&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Magnesium&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Selenium&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;gamma-Hexachlorocyclohexane&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Isodrin&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Nitrates&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;p,p-DDE&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;PCB 28&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Sulfides&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Yearwise Chemical collection'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='water_readings_cleaned' name='federated.1ncmjri1lw54to14edimp1hlu1ub' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ncmjri1lw54to14edimp1hlu1ub'>
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column-instance column='[measure]' derivation='Count' name='[cnt:measure:qk]' pivot='key' type='quantitative' />
+            <column caption='Measure' datatype='string' name='[measure]' role='dimension' type='nominal' />
+            <column-instance column='[measure]' derivation='None' name='[none:measure:nk]' pivot='key' type='nominal' />
+            <column caption='Sample Date' datatype='date' name='[sample date]' role='dimension' type='ordinal' />
+            <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[sample date]' derivation='Year-Trunc' name='[tyr:sample date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1ncmjri1lw54to14edimp1hlu1ub].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1ncmjri1lw54to14edimp1hlu1ub].[cnt:measure:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1ncmjri1lw54to14edimp1hlu1ub].[sum:Number of Records:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1ncmjri1lw54to14edimp1hlu1ub].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1ncmjri1lw54to14edimp1hlu1ub].[none:measure:nk]' value='176' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1ncmjri1lw54to14edimp1hlu1ub].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1ncmjri1lw54to14edimp1hlu1ub].[none:measure:nk]</rows>
+        <cols>[federated.1ncmjri1lw54to14edimp1hlu1ub].[tyr:sample date:ok]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+    <window class='worksheet' maximized='true' name='Yearwise Chemical collection'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1ncmjri1lw54to14edimp1hlu1ub].[none:measure:nk]</field>
+            <field>[federated.1ncmjri1lw54to14edimp1hlu1ub].[tyr:sample date:ok]</field>
+            <field>[federated.1ncmjri1lw54to14edimp1hlu1ub].[yr:sample date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Yearwise Chemical collection' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
